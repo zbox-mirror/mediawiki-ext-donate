@@ -1,0 +1,55 @@
+{
+  "name": "MW_EXT_Donate",
+  "version": "1.0.0",
+  "author": [
+    "[https://z17.dev/ z17 Dev]",
+    "[https://z17.cx/ z17 CX]",
+    "..."
+  ],
+  "url": "https://github.com/cmfstore",
+  "descriptionmsg": "mw-ext-donate-desc",
+  "license-name": "[https://choosealicense.com/licenses/mit/ MIT]",
+  "type": "parserhook",
+  "require": {
+    "MediaWiki": ">= 1.30.0",
+    "extensions": {
+      "MW_EXT_Kernel": "*"
+    }
+  },
+  "AutoloadClasses": {
+    "MediaWiki\\Extension\\CMFStore\\MW_EXT_Donate": "MW_EXT_Donate.class.php"
+  },
+  "Hooks": {
+    "ParserFirstCallInit": [
+      "MediaWiki\\Extension\\CMFStore\\MW_EXT_Donate::onParserFirstCallInit"
+    ],
+    "BeforePageDisplay": [
+      "MediaWiki\\Extension\\CMFStore\\MW_EXT_Donate::onBeforePageDisplay"
+    ]
+  },
+  "ExtensionMessagesFiles": {
+    "MW_EXT_DonateMagic": "MW_EXT_Donate.i18n.magic.php"
+  },
+  "MessagesDirs": {
+    "MW_EXT_Donate": [
+      "i18n"
+    ]
+  },
+  "ResourceModules": {
+    "ext.mw.donate.styles": {
+      "styles": [
+        "styles/theme.css"
+      ],
+      "position": "top",
+      "targets": [
+        "desktop",
+        "mobile"
+      ]
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "modules",
+    "remoteExtPath": "MW_EXT_Donate/modules"
+  },
+  "manifest_version": 2
+}
